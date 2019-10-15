@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>11-RGB</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <div id="container">
+            <div class="color-picker">
+                <div class="color-picker-text">
+                    <span>0</span>
+                    <span>0</span>
+                    <span>0</span>
+                </div>
+                <div class="color-picker-range">
+                    <input class="color-picker__slider color-picker__slider--red" 
+                            id="red--range" 
+                            type="range" 
+                            min="0" 
+                            max="255" 
+                            step="1" 
+                            value="0" 
+                            onChange="getColor('range', 'text-input')">
+                    <input class="color-picker__slider color-picker__slider--red" 
+                            id="green--range" 
+                            type="range" 
+                            min="0" 
+                            max="255" 
+                            step="1" 
+                            value="0" 
+                            onChange="getColor('range', 'text-input')">
+                    <input class="color-picker__slider color-picker__slider--red"
+                            id="blue--range" 
+                            type="range" 
+                            min="0" 
+                            max="255" 
+                            step="1" 
+                            value="0" 
+                            onChange="getColor('range', 'text-input')">
+                </div>
+                <div class="color-picker-text">
+                    <span>255</span>
+                    <span>255</span>
+                    <span>255</span>
+                </div>
+            </div>
+
+            <div class="result-color-rgb">
+                <input type="number" id="red--text-input" class="result-color-rgb__item" value="0" min="0" max="255" onChange="getColor('text-input', 'range')">
+                <input type="number" id="green--text-input" class="result-color-rgb__item" value="0" min="0" max="255" onChange="getColor('text-input', 'range')">
+                <input type="number" id="blue--text-input" class="result-color-rgb__item" value="0" min="0" max="255" onChange="getColor('text-input', 'range')">
+            </div>
+            
+            <div id="result-color">
+                <p id="result-text"></p>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>

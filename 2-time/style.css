@@ -1,0 +1,510 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+    background: #000;
+    background: linear-gradient(to bottom right,#085074, #087462);
+    color: #fff;
+	min-height: 100vh !important;
+}
+
+#container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.time-container {
+    background-color: rgba(255,255,255,0.1);
+    border-top: 30px solid rgba(255,255,255,0.2);
+    display: flex;
+    flex-direction: row;
+    font-size: 70px;
+    padding: 50px 30px;
+}
+
+.time {
+    display: flex;
+    flex-direction: row;
+    margin: 3px;
+}
+
+.time-item {
+    background-color: rgba(255,255,255,0.2);
+    box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Allerta Stencil', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    overflow: hidden;
+    padding: 20px 10px;
+    position: relative;
+    text-align: center;
+}
+
+.time-item::before,
+.time-item::after {
+    border: 1px solid rgba(0,0,0,0.2);
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+.time-item::before {
+    top: calc(50% - 1px);
+}
+
+.time-item::after {
+    border-color: rgba(0,0,0,0.1);
+    top: calc(50% + 1px);
+}
+
+.time-item--decade {
+    margin-right: 1px;
+}
+
+.number {
+    border: 5px solid white;
+    border-left-color: lightgrey;
+    border-right-color: lightgrey;
+    height: 20px;
+    width: 20px;
+}
+
+.number--top {
+    border-bottom-color: transparent;
+}
+
+.number--bottom {
+    border-top-color: transparent;
+}
+
+
+
+.time--minutes .time-item--decade .number--bottom {
+    animation: unit--bottom 6000s linear infinite forwards;
+} 
+.time--minutes .time-item--decade .number--top {
+    animation: unit--top 6000s linear infinite forwards;
+}
+
+.time--minutes .time-item--unit .number--bottom {
+    animation: unit--bottom 600s linear infinite forwards;
+} 
+.time--minutes .time-item--unit .number--top {
+    animation: unit--top 600s linear infinite forwards;
+}
+
+
+
+.time--seconds .time-item--decade .number--top {
+    animation: decade--top 60s linear infinite forwards;
+}
+.time--seconds .time-item--decade .number--bottom {
+    animation: decade--bottom 60s linear infinite forwards;
+}
+
+.time--seconds .time-item--unit .number--top {
+    animation: unit--top 10s linear infinite forwards;
+}
+.time--seconds .time-item--unit .number--bottom {
+    animation: unit--bottom 10s linear infinite forwards;
+}
+
+
+
+
+.time--milliseconds .time-item--decade .number--top {
+    animation: unit--top 1s linear infinite forwards;
+}
+.time--milliseconds .time-item--decade .number--bottom {
+    animation: unit--bottom 1s linear infinite forwards;
+}
+
+.time--milliseconds .time-item--unit .number--top {
+    animation: unit--top 100ms linear infinite forwards;
+}
+.time--milliseconds .time-item--unit .number--bottom {
+    animation: unit--bottom 100ms linear infinite forwards;
+}
+
+
+/* *** ANIMATIONS *** */
+
+@keyframes unit--top {
+    0% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: lightgrey;
+    }
+    10% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: lightgrey;
+    }
+    11% {
+        border-top-color: transparent;
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    20% {
+        border-top-color: transparent;
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    21% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+    30% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+    31% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+    40% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+    41%  {
+        border-top-color: transparent;
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    50%  {
+        border-top-color: transparent;
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    51% {
+        border-top-color: white;
+        border-right-color: transparent;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    60% {
+        border-top-color: white;
+        border-right-color: transparent;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    61% {
+        border-top-color: white;
+        border-right-color: transparent;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    70% {
+        border-top-color: white;
+        border-right-color: transparent;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    71% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    80% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    81% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    90% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    91% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    100% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+}
+
+
+
+@keyframes unit--bottom {
+    0% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    10% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    11% {
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    20% {
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    21% {
+        border-right-color: transparent;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    30% {
+        border-right-color: transparent;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    31% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+    40% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+    41%  {
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    50%  {
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    51% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+    60% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+    61% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    70% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    71% {
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    80% {
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    81% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    90% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    91% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+    100% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+}
+
+
+
+
+@keyframes decade--top {
+    0% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: lightgrey;
+    }
+    16% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: lightgrey;
+    }
+    17% {
+        border-top-color: transparent;
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    33% {
+        border-top-color: transparent;
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    34% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+    50% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+    51% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+    67% {
+        border-top-color: white;
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+    68%  {
+        border-top-color: transparent;
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    83%  {
+        border-top-color: transparent;
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    84% {
+        border-top-color: white;
+        border-right-color: transparent;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    100% {
+        border-top-color: white;
+        border-right-color: transparent;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+}
+
+
+
+@keyframes decade--bottom {
+    0% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    16% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    17% {
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    33% {
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    34% {
+        border-right-color: transparent;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    50% {
+        border-right-color: transparent;
+        border-bottom-color: white;
+        border-left-color: lightgrey;
+    }
+    51% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+    67% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+    68%  {
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    83%  {
+        border-right-color: lightgrey;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    84% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+    100% {
+        border-right-color: lightgrey;
+        border-bottom-color: white;
+        border-left-color: transparent;
+    }
+}
